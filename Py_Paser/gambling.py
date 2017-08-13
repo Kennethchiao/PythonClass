@@ -13,7 +13,7 @@ soup = BS(html.text,'html.parser')
 # 抓出網頁屬性 ID = rightdown 的 <div> 並回傳串列至 data1
 data1 = soup.select("#rightdown")
 # print(data1)
-# 從串列中找出 class = 'contents_box02'的< div>
+# 從串列中找出 class = 'contents_box02'的 <div>
 data2 = data1[0].find('div',{'class':'contents_box02'})
 # print(data2)
 # 再次重 data2 抓出 class = "ball_tx" 的 <div>
@@ -32,7 +32,7 @@ print(" 開出Order: ",end="")
 for n in range(0,6):
     print(data3[n].text,end="  ")
 
-print("\n 開出Order: ",end="")
+print("\n 小大Order: ",end="")
 for n in range(6,len(data3)):
     print(data3[n].text,end="  ")
 
