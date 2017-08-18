@@ -4,8 +4,9 @@ from pytube import YouTube
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
-yt = YouTube("https://www.youtube.com/watch?v=uWrWBrCHLhI&index=69&list=PLNrEXTZ4tDzJl6qZu16iBNronM-n5ppcC")
-
+url =  input("輸入想下載的Youtube影片：")
+# yt = YouTube("https://www.youtube.com/watch?v=uWrWBrCHLhI&index=69&list=PLNrEXTZ4tDzJl6qZu16iBNronM-n5ppcC")
+yt = YouTube(url)
 # Once set, you can see all the codec and quality options YouTube has made
 # available for the particular video by printing videos.
 print(yt.filename)

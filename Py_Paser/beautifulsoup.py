@@ -20,7 +20,7 @@ from bs4 import BeautifulSoup
 html_test = """
 <html><head><title>Web page</title></head>
 
-<p class = "title"><strong>文件標題</strong></p>
+<p class = "title"><strong>title</strong></p>
 <p class = "story">Once upon... there were three Kindown; there name were
 <a href = "http://example.com/Red" class = "student" id = "link1">red</a>
 <a href = "http://example.com/Blue" class = "student" id = "link2">blue</a>
