@@ -30,9 +30,10 @@ def readData():
 
 def disp_data():
     print('帳號 \t 密碼')
-    print('====================')
+    print('============================')
     for key in data:
-        print('帳號：{} \t 密碼：{}'.format(key,data[key]))
+        print('= 帳號：{} \t 密碼：{} ='.format(key,data[key]))
+    print('============================')
     input('Plz input any key return menu')
 
 def input_data():
@@ -43,7 +44,6 @@ def input_data():
             print('{} 帳號已經存在 ！'.format(name))
             continue
         password = input('請輸入密碼：')
-        print(data)
         data[name] = password
         with open('test.txt','w', encoding = 'utf-8-sig') as f:
             f.write(str(data))
@@ -80,25 +80,37 @@ def delete_data():
             del data[name]
             with open('test.txt','w', encoding = 'utf-8-sig') as f:
                 f.write(str(data))
-                input('刪了就別後悔！！！！')
+                input('已經刪了，來不及了！')
                 break
 
 data = dict()
 data = readData()
 while True:
     menu()
-    chi = input("輸入選擇：")
-    print(type(chi))
-    print()
-    if chi == '1':
-        input_data()
-    elif chi == 2:
-        disp_data()
-    elif chi == 3:
-        edit_data()
-    elif chi == 4:
-        delete_data()
-    else:
-        break
+    try:
+        chi = int(input("輸入選擇："))
+        print()
+        if chi == 1:
+            input_data()
+        elif chi == 2:
+            disp_data()
+        elif chi == 3:
+            edit_data()
+        elif chi == 4:
+            delete_data()
+        elif chi == 5:
+            break
+        else:
+            print("輸入錯誤，請重新輸入！")
+            input('Plz input any key return menu')
+            os.system('clear')
+            continue
+    except:
+            print("輸入錯誤，請重新輸入！")
+            input('Plz input any key return menu')
+            os.system('clear')
+            continue
+
+
 
 print('掰囉！下次見！')
