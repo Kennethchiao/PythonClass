@@ -20,6 +20,7 @@ else:
 
 # 取得標籤
 all_link = sp.find_all(['a','img'])
+
 for link in all_link:
     # 讀取 src 和 href
     src = link.get('src')
